@@ -6,7 +6,10 @@ import NotFound from "./pages/NotFound";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
-import Product from "./pages/Product";
+import AllProducts from "./pages/AllProducts";
+import NewProduct from "./pages/NewProduct";
+import ProductDetail from "./pages/ProductDetail";
+import MyCart from "./pages/MyCart";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +18,10 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/main", element: <Home /> },
-      { path: "/main/product/:productId", element: <Product /> },
+      { path: "/products", element: <AllProducts /> },
+      { path: "/products/new", element: <NewProduct /> },
+      { path: "/products/:id", element: <ProductDetail /> },
+      { path: "/carts", element: <MyCart /> },
     ],
   },
 ]);
