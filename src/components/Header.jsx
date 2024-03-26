@@ -2,6 +2,7 @@ import React from 'react';
 import { MdShoppingBasket } from "react-icons/md";
 import { HiPencil } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
+import { login } from '../api/firbase';
 
 export default function Header() {
   return (
@@ -16,7 +17,7 @@ export default function Header() {
         <Link to='/products/new' className='text-2xl'>
           <HiPencil />
         </Link>
-        <button>Login</button>
+        <button onClick={login}>Login</button>
       </nav>
     </header>
   );
