@@ -3,6 +3,7 @@ import { MdShoppingBasket } from "react-icons/md";
 import { HiPencil } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import { login, logout, onUserStateChange } from '../api/firbase';
+import User from '../components/User';
 
 export default function Header() {
   const [user, setUser] = useState();
@@ -25,6 +26,7 @@ export default function Header() {
         <Link to='/products/new' className='text-2xl'>
           <HiPencil />
         </Link>
+        {user && <User user={user} />}
         {!user && <button onClick={login}>Login</button>}
         {user && <button onClick={logout}>Logout</button>}
       </nav>
