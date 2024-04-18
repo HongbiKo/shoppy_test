@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MdShoppingBasket } from "react-icons/md";
 import { HiPencil } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
-import { login, logout, onUserStateChange } from '../api/firbase';
+import { login, logout, onUserStateChange } from '../api/firebase';
 import User from '../components/User';
 
 export default function Header() {
@@ -10,6 +10,7 @@ export default function Header() {
 
   useEffect(()=>{
     onUserStateChange((user) => {
+      console.log(user);
       setUser(user);
     });
   }, []);
