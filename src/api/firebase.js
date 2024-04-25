@@ -40,7 +40,7 @@ async function adminUser(user) {
     if (snapshot.exists()) {
       const admins = snapshot.val();
       const isAdmin = admins.includes(user.uid);
-      return {...user, isAdmin}
+      return { ...user, isAdmin };
     }
     return user;
   });
